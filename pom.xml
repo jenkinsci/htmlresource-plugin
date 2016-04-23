@@ -3,17 +3,23 @@
 	<parent>
 		<groupId>org.jenkins-ci.plugins</groupId>
 		<artifactId>plugin</artifactId>
-		<version>1.645</version>
+		<version>2.3</version>
 		<!-- <version>1.460</version> version caused JENKINS-13518 -->
 	</parent>
 
 	<artifactId>htmlresource</artifactId>
 	<name>HTMLResource</name>
+	<licenses>
+	    <license>
+	      <name>MIT</name>
+	    </license>
+	</licenses>
 	<version>1.0-SNAPSHOT</version>
 	<packaging>hpi</packaging>
 	<description>HTML Resource allows you to make js and css libraries available to jenkins</description>
 	<url>http://wiki.jenkins-ci.org/display/JENKINS/HTMLResource+Plugin</url>
 	<inceptionYear>2010</inceptionYear>
+	
 	<developers>
 		<developer>
 			<id>vimil</id>
@@ -21,6 +27,7 @@
 			<email>-</email>
 		</developer>
 	</developers>
+	
 	<repositories>
 		<repository>
 			<id>repo.jenkins-ci.org</id>

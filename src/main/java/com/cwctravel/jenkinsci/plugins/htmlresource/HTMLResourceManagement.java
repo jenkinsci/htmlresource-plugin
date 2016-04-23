@@ -1,7 +1,7 @@
 /*
  * The MIT License
  *
- * Copyright (c) 2010, Dominik Bartholdi
+ * Copyright (c) 2010, Vimil
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -58,7 +58,7 @@ import com.cwctravel.jenkinsci.plugins.htmlresource.config.HTMLResourceEntry;
 /**
  * Creates the link on the "manage Jenkins" page and handles all the web requests.
  * 
- * @author Dominik Bartholdi (imod)
+ * @author Vimil (imod)
  */
 @Extension
 public class HTMLResourceManagement extends ManagementLink {
