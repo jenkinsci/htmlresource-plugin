@@ -1,0 +1,14 @@
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:l="/lib/layout" xmlns:t="/lib/hudson" xmlns:f="/lib/form">
+	<j:forEach var="jsPath" items="${it.jSResourcePaths}">
+		 <script type="text/javascript" src="${rootURL}/htmlresource/${jsPath}"></script>
+	</j:forEach>
+	
+	<j:forEach var="initializationScript" items="${it.initializationScripts}">
+		 <script>${initializationScript}</script>
+	</j:forEach>
+	
+	<j:forEach var="cssPath" items="${it.cSSResourcePaths}">
+		 <link rel="stylesheet" href="${rootURL}/htmlresource/${cssPath}" />
+	</j:forEach>
+
+</j:jelly>
