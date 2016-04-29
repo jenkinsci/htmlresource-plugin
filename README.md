@@ -39,7 +39,7 @@ In the screenshot below some custom initialization code has been added to preven
 ![alt tag](https://raw.githubusercontent.com/vimil/htmlresource/master/docs/images/screenshot7.png)
 
 
-Below is screenshot showing the chrome debugger that the js libraries have been downloaded from webjar
+Below is a screenshot showing the chrome debugger that the js libraries have been downloaded from webjar
 
 
 ![alt tag](https://raw.githubusercontent.com/vimil/htmlresource/master/docs/images/screenshot8.png)
