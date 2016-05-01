@@ -14,7 +14,7 @@
 	      <name>MIT</name>
 	    </license>
 	</licenses>
-	<version>1.02-SNAPSHOT</version>
+	<version>1.02</version>
 	<packaging>hpi</packaging>
 	<description>HTML Resource allows you to make js and css libraries available to jenkins</description>
 	<url>http://wiki.jenkins-ci.org/display/JENKINS/HTMLResource+Plugin</url>
@@ -121,7 +121,7 @@
 		<connection>scm:git:git://github.com/jenkinsci/htmlresource-plugin.git</connection>
 		<developerConnection>scm:git:ssh://git@github.com/jenkinsci/htmlresource-plugin.git</developerConnection>
 		<url>https://github.com/vimil/htmlresource-plugin</url>
-	  <tag>htmlresource-1.0</tag>
+	  <tag>htmlresource-1.02</tag>
   </scm>
 	<distributionManagement>
 		<repository>
