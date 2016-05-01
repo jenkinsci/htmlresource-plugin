@@ -125,14 +125,13 @@
   </scm>
 	<distributionManagement>
 		<repository>
-			<id>java.net-m2-repository</id>
-			<url>http://maven.jenkins-ci.org:8081/content/repositories/releases/</url>
-		</repository>
-		<snapshotRepository>
-			<!-- prevent accidental deployment of SNAPSHOTS to repository -->
-			<id>local.repository</id>
-			<url>file:/tmp/dummy-repo</url>
-		</snapshotRepository>
+			<id>maven.jenkins-ci.org</id>
+			<url>http://maven.jenkins-ci.org/content/repositories/releases/</url>
+	   </repository>
+	    <snapshotRepository>
+	      <id>maven.jenkins-ci.org</id>
+	      <url>http://repo.jenkins-ci.org/snapshots/</url>
+	    </snapshotRepository>	   
 	</distributionManagement>
 	<dependencies>
 		<dependency>
