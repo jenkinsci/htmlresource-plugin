@@ -14,7 +14,7 @@
 	      <name>MIT</name>
 	    </license>
 	</licenses>
-	<version>1.0-SNAPSHOT</version>
+	<version>1.0</version>
 	<packaging>hpi</packaging>
 	<description>HTML Resource allows you to make js and css libraries available to jenkins</description>
 	<url>http://wiki.jenkins-ci.org/display/JENKINS/HTMLResource+Plugin</url>
