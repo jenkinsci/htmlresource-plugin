@@ -17,7 +17,7 @@
 	<version>1.03-SNAPSHOT</version>
 	<packaging>hpi</packaging>
 	<description>HTML Resource allows you to make js and css libraries available to jenkins</description>
-	<url>http://wiki.jenkins-ci.org/display/JENKINS/HTMLResource+Plugin</url>
+	<url>https://wiki.jenkins-ci.org/display/JENKINS/HTMLResource+Plugin</url>
 	<inceptionYear>2010</inceptionYear>
 	
 	<developers>
