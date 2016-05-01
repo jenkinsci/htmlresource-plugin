@@ -118,8 +118,8 @@
 		</plugins>
 	</build>
 	<scm>
-		<connection>scm:git:git://github.com/jenkinsci/scriptler-plugin.git</connection>
-		<developerConnection>scm:git:ssh://git@github.com/vimil/htmlresource-plugin.git</developerConnection>
+		<connection>scm:git:git://github.com/jenkinsci/htmlresource-plugin.git</connection>
+		<developerConnection>scm:git:ssh://git@github.com/jenkinsci/htmlresource-plugin.git</developerConnection>
 		<url>https://github.com/vimil/htmlresource-plugin</url>
 	  <tag>HEAD</tag>
   </scm>
