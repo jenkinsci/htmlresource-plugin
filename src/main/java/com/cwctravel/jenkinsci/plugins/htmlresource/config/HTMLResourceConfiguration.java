@@ -83,7 +83,7 @@ public final class HTMLResourceConfiguration extends HTMLResourceSet implements 
 	// always retrieve via getter
 	private static transient HTMLResourceConfiguration cfg = null;
 
-	public static HTMLResourceConfiguration getConfiguration() {
+	public static synchronized HTMLResourceConfiguration getConfiguration() {
 		if (cfg == null) {
 			try {
 				cfg = HTMLResourceConfiguration.load();

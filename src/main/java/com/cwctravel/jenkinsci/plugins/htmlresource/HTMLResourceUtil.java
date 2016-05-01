@@ -206,11 +206,14 @@ public class HTMLResourceUtil {
 
 	public static HTMLResourceManagement getHTMLResourceManagement() {
 		HTMLResourceManagement result = null;
-		List<ManagementLink> managementLinks = Jenkins.getInstance().getManagementLinks();
-		for (ManagementLink managementLink : managementLinks) {
-			if (managementLink instanceof HTMLResourceManagement) {
-				result = (HTMLResourceManagement) managementLink;
-				break;
+		Jenkins jenkinsInstance = Jenkins.getInstance();
+		if(jenkinsInstance != null) {
+			List<ManagementLink> managementLinks = jenkinsInstance.getManagementLinks();
+			for (ManagementLink managementLink : managementLinks) {
+				if (managementLink instanceof HTMLResourceManagement) {
+					result = (HTMLResourceManagement) managementLink;
+					break;
+				}
 			}
 		}
 

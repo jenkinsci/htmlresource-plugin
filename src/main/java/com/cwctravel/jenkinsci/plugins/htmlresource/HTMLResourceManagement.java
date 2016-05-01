@@ -29,6 +29,7 @@ import hudson.PluginWrapper;
 import hudson.model.ManagementLink;
 import hudson.model.Hudson;
 import hudson.security.Permission;
+import jenkins.model.Jenkins;
 
 import java.io.File;
 import java.io.IOException;
@@ -99,8 +100,14 @@ public class HTMLResourceManagement extends ManagementLink {
 	}
 
 	public String getPluginResourcePath() {
-		PluginWrapper wrapper = Hudson.getInstance().getPluginManager().getPlugin(HTMLResourcePluginImpl.class);
-		return Hudson.getInstance().getRootUrl() + "plugin/" + wrapper.getShortName() + "/";
+		String result = null;
+		Jenkins jenkinsInstance = Jenkins.getInstance();
+		if(jenkinsInstance !=null) {
+			PluginWrapper wrapper = jenkinsInstance.getPluginManager().getPlugin(HTMLResourcePluginImpl.class);
+			result = jenkinsInstance.getRootUrl() + "plugin/" + wrapper.getShortName() + "/";
+		}
+		
+		return result;
 	}
 
 	public void doEditResourceEntries(StaplerRequest req, StaplerResponse rsp, @QueryParameter("id") String id) throws IOException, ServletException {
@@ -129,12 +136,12 @@ public class HTMLResourceManagement extends ManagementLink {
 
 		// remove the file
 		File oldScript = new File(getWebJARDirectory(), id);
-		oldScript.delete();
-
-		// remove the meta information
-		HTMLResourceConfiguration cfg = getConfiguration();
-		cfg.removeHTMLResource(id);
-		cfg.save();
+		if(oldScript.delete()){
+			// remove the meta information
+			HTMLResourceConfiguration cfg = getConfiguration();
+			cfg.removeHTMLResource(id);
+			cfg.save();
+		}
 
 		return new HttpRedirect("index");
 	}
@@ -310,11 +317,19 @@ public class HTMLResourceManagement extends ManagementLink {
 	}
 
 	public static File getHTMLResourceHomeDirectory() {
-		return new File(Hudson.getInstance().getRootDir(), "htmlresource");
+		File result = null;
+		Jenkins jenkinsInstance = Jenkins.getInstance();
+		if(jenkinsInstance != null) {
+			result =  new File(jenkinsInstance.getRootDir(), "htmlresource");
+		}
+		return result;
 	}
 
 	private void checkPermission(Permission permission) {
-		Hudson.getInstance().checkPermission(permission);
+		Jenkins jenkinsInstance = Jenkins.getInstance();
+		if(jenkinsInstance != null) {
+			jenkinsInstance.checkPermission(permission);
+		}
 	}
 
 	@Override

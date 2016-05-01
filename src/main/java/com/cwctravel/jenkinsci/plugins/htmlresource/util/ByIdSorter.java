@@ -23,6 +23,7 @@
  */
 package com.cwctravel.jenkinsci.plugins.htmlresource.util;
 
+import java.io.Serializable;
 import java.util.Comparator;
 
 import com.cwctravel.jenkinsci.plugins.htmlresource.config.NamedResource;
@@ -31,7 +32,9 @@ import com.cwctravel.jenkinsci.plugins.htmlresource.config.NamedResource;
  * @author imod
  * 
  */
-public class ByIdSorter implements Comparator<NamedResource> {
+public class ByIdSorter implements Comparator<NamedResource>, Serializable {
+	private static final long serialVersionUID = 1062350221816203098L;
+
 	@Override
 	public int compare(NamedResource o1, NamedResource o2) {
 		return o1.getId().compareTo(o2.getId());

@@ -54,14 +54,19 @@ public class HTMLResourcePluginImpl extends Plugin {
 	 * @throws IOException
 	 */
 	private void synchronizeConfig() throws IOException {
-		LOGGER.info("initialize scriptler");
-		if (!HTMLResourceManagement.getHTMLResourceHomeDirectory().exists()) {
-			HTMLResourceManagement.getHTMLResourceHomeDirectory().mkdirs();
+		LOGGER.info("initialize htmlresource");
+		File htmlResourceHomeDirectory = HTMLResourceManagement.getHTMLResourceHomeDirectory();
+		if (!htmlResourceHomeDirectory.exists()) {
+			if(!htmlResourceHomeDirectory.mkdirs()) {
+				throw new  IOException("Could not mkdir " + htmlResourceHomeDirectory.getAbsolutePath());
+			}
 		}
 		File webjarDirectory = HTMLResourceManagement.getWebJARDirectory();
 		// create the directory for the scripts if not available
 		if (!webjarDirectory.exists()) {
-			webjarDirectory.mkdirs();
+			if(!webjarDirectory.mkdirs()) {
+				throw new  IOException("Could not mkdir " + webjarDirectory.getAbsolutePath());
+			}
 		}
 
 		HTMLResourceConfiguration cfg = HTMLResourceConfiguration.load();
